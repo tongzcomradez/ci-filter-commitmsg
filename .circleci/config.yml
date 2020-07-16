@@ -1,0 +1,26 @@
+######################
+####### Filter #######
+######################
+
+filter_only_test_tag: &filter_only_test_tag
+  filters:
+    branches:
+      only: master
+    commit:
+      only: /^hello/i
+
+version: 2.1
+jobs:
+  greeting:
+    machine: true
+    steps:
+      - checkout
+      - run: |
+        echo Hello
+
+workflows:
+  version: 2
+  publish_prod:
+    jobs:
+      - greeting:
+          <<: *filter_only_release_tag
