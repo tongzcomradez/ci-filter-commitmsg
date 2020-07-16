@@ -27,4 +27,4 @@ workflows:
   publish_prod:
     jobs:
       - greeting:
-          <<: *filter_only_release_tag
+          <<: *filter_only_test_tag
