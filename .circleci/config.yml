@@ -6,7 +6,7 @@ filter_only_test_tag: &filter_only_test_tag
   filters:
     branches:
       only: master
-    commit:
+    commit_message:
       only: /^hello/i
 
 greeting: &greeting
